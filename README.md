@@ -1,2 +1,2 @@
-# language-treescript
-TreeScript language package for Atom.
+# language-valscript
+ValScript language package for Atom.
