@@ -1,6 +1,6 @@
-scopeName: 'source.treescript'
-name: 'Treescript'
-fileTypes: ['trs']
+scopeName: 'source.valscript'
+name: 'ValScript'
+fileTypes: ['vst']
 limitLineLength: false
 patterns: [
   {
@@ -8,7 +8,6 @@ patterns: [
     match: '[/][/].*$'
   },
   {
-    name: 'constant.character';
     begin: '\\[';
     end: '\\]';
     patterns: [{
@@ -20,6 +19,14 @@ patterns: [
       name: 'constant.numeric';
       match: '[1-9][0-9]*';
     }];
+  },
+  {
+    begin: '~';
+    end: '$';
+    patterns: [{
+        name: 'entity.name.function';
+        match: '[#]'
+    }]
   },
   {
     name: 'string';
@@ -43,20 +50,8 @@ patterns: [
     match: '[ ][~]$';
   },
   {
-    name: 'invalid.illegal';
-    match: '[~]';
-  },
-  {
     name: 'constant.character';
     match: '[ ][:][ ]';
-  },
-  {
-    name: 'invalid.illegal';
-    match: '[ ][:]$';
-  },
-  {
-    name: 'invalid.illegal';
-    match: '[:]';
   },
   {
     name: 'constant.character';
