@@ -1,2 +1,2 @@
 # language-treescript
-#### TreeScript language package for Atom.
+TreeScript language package for Atom.
