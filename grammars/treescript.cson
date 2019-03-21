@@ -1,0 +1,65 @@
+scopeName: 'source.treescript'
+name: 'Treescript'
+fileTypes: ['trs']
+limitLineLength: false
+patterns: [
+  {
+    name: 'comment.line'
+    match: '[/][/].*$'
+  },
+  {
+    name: 'constant.character';
+    begin: '\\[';
+    end: '\\]';
+    patterns: [{
+      name: 'string';
+      begin: '"';
+      end: '"';
+    },
+    {
+      name: 'constant.numeric';
+      match: '[1-9][0-9]*';
+    }];
+  },
+  {
+    name: 'string';
+    begin: '"';
+    end: '"';
+  },
+  {
+    name: 'keyword';
+    match: '[-]+>';
+  },
+  {
+    name: 'keyword';
+    match: '[|][-]+>';
+  },
+  {
+    name: 'constant.character';
+    match: '[ ][~][ ]';
+  },
+  {
+    name: 'constant.character';
+    match: '[ ][~]$';
+  },
+  {
+    name: 'invalid.illegal';
+    match: '[~]';
+  },
+  {
+    name: 'constant.character';
+    match: '[ ][:][ ]';
+  },
+  {
+    name: 'invalid.illegal';
+    match: '[ ][:]$';
+  },
+  {
+    name: 'invalid.illegal';
+    match: '[:]';
+  },
+  {
+    name: 'constant.character';
+    match: ',';
+  },
+]
