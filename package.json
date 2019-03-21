@@ -1,0 +1,16 @@
+{
+  "name": "language-treescript",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "https://github.com/dakodabutnot/treescript",
+  "keywords": [
+    "syntax",
+    "highlighting",
+    "grammar"
+  ],
+  "license": "MIT",
+  "bugs": "https://github.com/dakodabutnot/treescript/issues",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
