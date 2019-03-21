@@ -1,15 +1,15 @@
 {
-  "name": "language-treescript",
+  "name": "language-valscript",
   "version": "0.0.0",
   "description": "",
-  "repository": "https://github.com/dakodabutnot/treescript",
+  "repository": "https://github.com/dakodabutnot/language-valscript",
   "keywords": [
     "syntax",
     "highlighting",
     "grammar"
   ],
   "license": "MIT",
-  "bugs": "https://github.com/dakodabutnot/treescript/issues",
+  "bugs": "https://github.com/dakodabutnot/language-valscript/issues",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   }
