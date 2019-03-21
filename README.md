@@ -1,2 +1,2 @@
-# language-valscript
-ValScript language package for Atom.
+# language-choice
+Choice language package for Atom.
