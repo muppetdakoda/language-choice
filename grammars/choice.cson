@@ -1,6 +1,6 @@
-scopeName: 'source.valscript'
-name: 'ValScript'
-fileTypes: ['vst']
+scopeName: 'source.choice'
+name: 'Choice'
+fileTypes: ['choice']
 limitLineLength: false
 patterns: [
   {
