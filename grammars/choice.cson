@@ -1,50 +1,65 @@
-scopeName: 'source.choice';
-name: 'Choice';
-fileTypes: ['choice'];
-limitLineLength: false;
+scopeName: 'source.choice'
+name: 'Choice'
+fileTypes: ['choice']
+limitLineLength: false
 patterns: [
   {
-    name: 'comment';
-    match: '[;]';
+    name: 'comment'
+    match: '[;]'
   },
   {
-    name: 'comment.line';
-    match: '[/][/].*$';
+    name: 'comment.line'
+    match: '\\/\\/.*$'
   },
   {
-    begin: '\\[';
-    end: '\\]';
+    begin: '\\['
+    end: '\\]'
     patterns: [{
-      include: "$self";
-    }];
+      include: "$self"
+    }]
   },
   {
-    name: 'entity.name.function';
-    match: '#[:]*\\w+';
+    name: 'entity.name.function'
+    match: '#\\w+'
   },
   {
-    name: 'string';
-    begin: '"';
-    end: '"';
+    match: '(#[:])(\\w+)'
+    captures: {
+      1: { name: 'variable.language' },
+      2: { name: 'variable.language' }
+    }
+  }
+  {
+    name: 'string'
+    begin: '"'
+    end: '"'
   },
   {
-    name: 'keyword';
-    match: '[|]*-+>';
+    name: 'keyword'
+    match: '=*-*+>'
   },
   {
-    name: 'keyword.control';
+    name: 'keyword.control'
     match: '-if|-switch'
   },
   {
-    name: 'constant.character';
-    match: '[,:~]';
+    match: '(extra\\()(.*)(\\))'
+    captures: {
+      1: { name: 'keyword' },
+      2: { patterns: [{include: '$self'}] },
+      3: { name: 'keyword' }
+    }
   },
   {
-    name: 'constant.numeric';
-    match: '[1-9][0-9]*';
+    name: 'constant.character'
+    match: '[:~.]'
   },
   {
-    name: 'constant.language';
+    name: 'constant.numeric'
+    match: '[0-9][0-9]*'
+  },
+  {
+    name: 'constant.language'
     match: '\\btrue\\b|\\bfalse\\b'
-  }
+  },
 ]
