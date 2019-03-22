@@ -5,7 +5,11 @@ limitLineLength: false
 patterns: [
   {
     name: 'comment'
-    match: '[;]'
+    match: '[;]$'
+  },
+  {
+    name: 'invalid.illegal'
+    match: '[;].*$'
   },
   {
     name: 'comment.line'
@@ -25,10 +29,10 @@ patterns: [
   {
     match: '(#[:])(\\w+)'
     captures: {
-      1: { name: 'variable.language' },
-      2: { name: 'variable.language' }
+      1: { name: 'entity.name.function' },
+      2: { name: 'entity.name.function' },
     }
-  }
+  },
   {
     name: 'string'
     begin: '"'
@@ -36,18 +40,36 @@ patterns: [
   },
   {
     name: 'keyword'
-    match: '=*-*+>'
+    match: '->'
   },
   {
-    name: 'keyword.control'
-    match: '-if|-switch'
+    name: 'keyword'
+    match: '~>'
   },
   {
-    match: '(extra\\()(.*)(\\))'
+    name: 'keyword'
+    match: '=>'
+  },
+  {
+    name: 'keyword'
+    match: '-then->'
+  },
+  {
+    match: '\\s*(extra\\()(.*)(\\))'
     captures: {
       1: { name: 'keyword' },
       2: { patterns: [{include: '$self'}] },
       3: { name: 'keyword' }
+    }
+  },
+  {
+    match: '(-)(if|switch)(\\()(.*)(\\))'
+    captures: {
+      1: { name: 'keyword' },
+      2: { name: 'keyword' },
+      3: { name: 'keyword' },
+      4: { patterns: [{include: '$self'}] },
+      5: { name: 'keyword' }
     }
   },
   {
@@ -56,10 +78,19 @@ patterns: [
   },
   {
     name: 'constant.numeric'
-    match: '[0-9][0-9]*'
+    match: '[-+]?[0-9]*\.?[0-9]+'
   },
   {
     name: 'constant.language'
     match: '\\btrue\\b|\\bfalse\\b'
   },
+  {
+    name: 'invalid.illegal'
+    match: '[^~;{]\\r'
+  },
+  {
+    #why doesn't this work
+    name: 'invalid.illegal'
+    match: '->\\s*.*->\\s*".+"\\s*~\\s*.*[ ]*{'
+  }
 ]
