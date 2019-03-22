@@ -54,14 +54,15 @@ patterns: [
     name: 'keyword'
     match: '-then->'
   },
-  {
-    match: '\\s*(extra\\()(.*)(\\))'
-    captures: {
-      1: { name: 'keyword' },
-      2: { patterns: [{include: '$self'}] },
-      3: { name: 'keyword' }
-    }
-  },
+  # Not used anymore
+  # {
+  #   match: '\\s*(extra\\()(.*)(\\))'
+  #   captures: {
+  #     1: { name: 'keyword' },
+  #     2: { patterns: [{include: '$self'}] },
+  #     3: { name: 'keyword' }
+  #   }
+  # },
   {
     match: '(-)(if|switch)(\\()(.*)(\\))'
     captures: {
