@@ -1,5 +1,7 @@
 # language-choice
-Choice language package for Atom.
+###### Choice language package for Atom.
+
+---
 
 A wiki explaining Choice's structure can be found [here](https://github.com/dakodabutnot/choice), and a work-in-progress Java/ANTLR parser can be found [here](https://github.com/dakodabutnot/java-choice).
 
